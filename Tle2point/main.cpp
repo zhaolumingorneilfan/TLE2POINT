@@ -46,11 +46,11 @@ void PrintPosVel(const cTle &tle)
 }
 
 
-/* Êı×éÇóÄæ£º½öÏŞ3 * 3µÄÊı×é
-ÊäÈë²ÎÊı£º
-A£ºÇóÄæÇ°µÄ¶şÎ¬Êı×é
-Êä³ö²ÎÊı£º
-D£ºÇóÄæºóµÄ¶şÎ¬Êı×é
+/* æ•°ç»„æ±‚é€†ï¼šä»…é™3 * 3çš„æ•°ç»„
+è¾“å…¥å‚æ•°ï¼š
+Aï¼šæ±‚é€†å‰çš„äºŒç»´æ•°ç»„
+è¾“å‡ºå‚æ•°ï¼š
+Dï¼šæ±‚é€†åçš„äºŒç»´æ•°ç»„
 */
 bool inv(double A[3][3], double D[3][3])
 {
@@ -117,33 +117,33 @@ bool inv(double A[3][3], double D[3][3])
 			D[i][j] = C[i][j + n];
 	return true;
 }
-/*Á½¸öÏòÁ¿²æ»ı£º½öÏŞ´óĞ¡Îª3µÄÊı×é
-ÊäÈë²ÎÊı£º
-A£ºÒ»Î¬Êı×é£¬´óĞ¡Îª3
-B£ºÒ»Î¬Êı×é£¬´óĞ¡Îª3
-Êä³ö²ÎÊı£º
-C£ºÒ»Î¬Êı×é£¬´óĞ¡Îª3
+/*ä¸¤ä¸ªå‘é‡å‰ç§¯ï¼šä»…é™å¤§å°ä¸º3çš„æ•°ç»„
+è¾“å…¥å‚æ•°ï¼š
+Aï¼šä¸€ç»´æ•°ç»„ï¼Œå¤§å°ä¸º3
+Bï¼šä¸€ç»´æ•°ç»„ï¼Œå¤§å°ä¸º3
+è¾“å‡ºå‚æ•°ï¼š
+Cï¼šä¸€ç»´æ•°ç»„ï¼Œå¤§å°ä¸º3
 */
 void cross(double A[], double B[], double C[3])
 {
-	double x = A[0] * B[2] - A[2] * B[1];//¼ÆËãÈı½×ĞĞÁĞÊ½
+	double x = A[0] * B[2] - A[2] * B[1];//è®¡ç®—ä¸‰é˜¶è¡Œåˆ—å¼
 	double y = A[2] * B[0] - A[0] * B[2];
 	double z = A[0] * B[1] - A[1] * B[0];
 	C[0] = x;
 	C[1] = y;
 	C[2] = z;
 }
-//Á½¸öÏòÁ¿²æ»ı£º½öÏŞ´óĞ¡Îª3 * 1µÄÊı×é
+//ä¸¤ä¸ªå‘é‡å‰ç§¯ï¼šä»…é™å¤§å°ä¸º3 * 1çš„æ•°ç»„
 /*
-ÊäÈë²ÎÊı£º
-A£º¶şÎ¬Êı×é£¬´óĞ¡Îª3 * 1
-B£º¶şÎ¬Êı×é£¬´óĞ¡Îª3 * 1
-Êä³ö²ÎÊı£º
-C£º¶şÎ¬Êı×é£¬´óĞ¡Îª3 * 1
+è¾“å…¥å‚æ•°ï¼š
+Aï¼šäºŒç»´æ•°ç»„ï¼Œå¤§å°ä¸º3 * 1
+Bï¼šäºŒç»´æ•°ç»„ï¼Œå¤§å°ä¸º3 * 1
+è¾“å‡ºå‚æ•°ï¼š
+Cï¼šäºŒç»´æ•°ç»„ï¼Œå¤§å°ä¸º3 * 1
 */
 void cross(double A[3][1], double B[3][1], double C[3][1])
 {
-	double x = A[1][0] * B[2][0] - A[2][0] * B[1][0];//¼ÆËãÈı½×ĞĞÁĞÊ½
+	double x = A[1][0] * B[2][0] - A[2][0] * B[1][0];//è®¡ç®—ä¸‰é˜¶è¡Œåˆ—å¼
 	double y = A[2][0] * B[0][0] - A[0][0] * B[2][0];
 	double z = A[0][0] * B[1][0] - A[1][0] * B[0][0];
 	C[0][0] = x;
@@ -151,7 +151,7 @@ void cross(double A[3][1], double B[3][1], double C[3][1])
 	C[2][0] = z;
 }
 
-//Á½¸ö3 * 3µÄÊı×é³Ë»ı£¬Êä³ö3 * 3µÄÊı×é
+//ä¸¤ä¸ª3 * 3çš„æ•°ç»„ä¹˜ç§¯ï¼Œè¾“å‡º3 * 3çš„æ•°ç»„
 void mult33(double a[3][3], double b[3][3], double c[3][3])
 {
 	int i, j, k;
@@ -168,7 +168,7 @@ void mult33(double a[3][3], double b[3][3], double c[3][3])
 	}
 }
 
-//Á½¸ö¶şÎ¬Êı×é³Ë»ı£ºÊäÈë·Ö±ğÎª3 * 3ºÍ3 * 1£¬Êä³ö3 * 1
+//ä¸¤ä¸ªäºŒç»´æ•°ç»„ä¹˜ç§¯ï¼šè¾“å…¥åˆ†åˆ«ä¸º3 * 3å’Œ3 * 1ï¼Œè¾“å‡º3 * 1
 void mult31(double a[3][3], double b[3][1], double c[3][1])
 {
 	int i, j, k;
@@ -185,7 +185,7 @@ void mult31(double a[3][3], double b[3][1], double c[3][1])
 	}
 }
 
-//Á½¸öÊı×é³Ë»ı£ºÊäÈë·Ö±ğÎª1 * 3ºÍ3 * 1£¬Êä³öÊıÖµ
+//ä¸¤ä¸ªæ•°ç»„ä¹˜ç§¯ï¼šè¾“å…¥åˆ†åˆ«ä¸º1 * 3å’Œ3 * 1ï¼Œè¾“å‡ºæ•°å€¼
 double mult11(double a[3], double b[3][1])
 {
 	int i, j, k;
@@ -198,7 +198,7 @@ double mult11(double a[3], double b[3][1])
 	return c;
 }
 
-//¾ØÕó×ªÖÃ: 1 * 3 ×ª 3 * 1
+//çŸ©é˜µè½¬ç½®: 1 * 3 è½¬ 3 * 1
 template<typename T >
 void transpose(T a[3], T at[3][1])
 {
@@ -208,7 +208,7 @@ void transpose(T a[3], T at[3][1])
 	}
 }
 
-///¾ØÕó×ªÖÃ: 3 * 1 ×ª 1 * 3
+///çŸ©é˜µè½¬ç½®: 3 * 1 è½¬ 1 * 3
 template<typename T >
 void transpose(T a[3][1], T at[3])
 {
@@ -246,7 +246,7 @@ double computeHg(TIMEDATE m_time)
 	GMST = fmod(GMST, 360.0);
 	GMST = (GMST / 360.0) * 2 * Pai;
 
-	//Considering precession, Nutation and ÔÂÁÁ¹ìµÀ¶Ô»ÆµÀÆ½¾ùÉı½»µãµÄ»Æ¾­
+	//Considering precession, Nutation and æœˆäº®è½¨é“å¯¹é»„é“å¹³å‡å‡äº¤ç‚¹çš„é»„ç»
 	m_dT = m_jdc - 2451545.0;
 	Om = 125.04452 - 1934.136261 * m_dT;
 	L = 280.4665 + 36000.7698 * m_dT;
@@ -262,7 +262,7 @@ double computeHg(TIMEDATE m_time)
 
 
 
-// ¾ØÕóAÓë¾ØÕóBÏà³Ë
+// çŸ©é˜µAä¸çŸ©é˜µBç›¸ä¹˜
 void MatrixAB(double A[3][3], double B[3], double C[3])
 {
 	int i, j;
@@ -272,111 +272,6 @@ void MatrixAB(double A[3][3], double B[3], double C[3])
 		for (j = 0; j < 3; j++)
 			C[i] += A[i][j] * B[j];
 	}
-
-}
-
-
-
-void getXYZFromLOSandEarth(double xo, double yo, double zo, double LOS[3][1], double H, double XYZ[3])
-{
-	double a = Re + H;
-	double b = Rp + H;
-	double c = a / b;
-	double AA = pow(LOS[0][0], 2.0) + pow(LOS[1][0], 2) + c * c * pow(LOS[2][0], 2);
-	double BB = xo * LOS[0][0] + yo * LOS[1][0] + c * c * zo * LOS[2][0];
-	double CC = xo * xo + yo * yo + c * c * zo * zo - a * a;
-	double tt = (-BB - sqrt(BB * BB - AA * CC)) / AA;
-	XYZ[0] = xo + tt * (LOS[0][0]);
-	XYZ[1] = yo + tt * (LOS[1][0]);
-	XYZ[2] = zo + tt * (LOS[2][0]);
-}
-
-/*******************************
-º¯ÊıËµÃ÷
-¸ù¾İµØ¹Ì×ø±êÏµÏÂµÄÎ»ÖÃÊ¸Á¿¼ÆËãµØÀí¾­Î³¶È
-ÊäÈëÁ¿
-XYZG£ºÄ¿±êµãÔÚµØ¹Ì×ø±êÏµÏÂµÄ×ø±ê
-flag: ±êÖ¾£¨0£º¼ÙÉè¸ß³ÌÎªÁã£»1£ºÀûÓÃÖ±½Ó·¨¼ÆËãµØÀí¾­Î³¶È¼°¸ß¶È£©
-Êä³öÁ¿
-lat, long : µØÀí¾­Î³¶Èlongitude and latitude
-********************************/
-void getBL(double XYZG[3], double flag, double& lat, double& lon, double h)
-{
-	double e = sqrt((Re * Re - Rp * Rp) / (Re * Re));
-	if (flag == -1)
-	{
-		double X = XYZG[0];
-		double Y = XYZG[1];
-		double Z = XYZG[2];
-		double L = atan2(Y, X);
-		double p = -2 * Z / sqrt(X * X + Y * Y);
-		double q = 1 / (1 - e * e) + Z * Z / (X * X + Y * Y)
-			- Re * Re / (X * X + Y * Y) * pow(e, 4) / (1 - pow(e, 4));
-		double r = -Z / sqrt(X * X + Y * Y) * 2 / (1 - e * e);
-		double s = Z * Z / (X * X + Y * Y) / (1 - e * e);
-		double PP = -q / 2;
-		double QQ = (p * r - 4 * s) / 4;
-		double RR = (-p) * (-p) * s / 8 + q * s / 2 - r * r / 8;
-		double pp = QQ - PP * PP / 3;
-		double qq = pow(PP, 3) * 2 / 27 - PP * QQ / 3 + RR;
-		double kk = pow((-qq / 2 + sqrt(qq * qq / 4 + pow(pp, 3) / 27))
-			, (1 / 3)) + pow((-qq / 2 - sqrt(qq * qq / 4 + pow(pp, 3) / 27))
-				, (1 / 3)) - PP / 3;
-		double bb = -sqrt(kk * kk - s);
-		double aa = (p * kk - r) / 2 / bb;
-		double TT1 = (-(p / 2 + aa) + sqrt(((p / 2 + aa), 2) - 4 * (kk + bb))) / 2;
-		double TT2 = (-(p / 2 + aa) - sqrt(((p / 2 + aa), 2) - 4 * (kk + bb))) / 2;
-		double TT3 = (-(p / 2 - aa) + sqrt(((p / 2 - aa), 2) - 4 * (kk - bb))) / 2;
-		double TT4 = (-(p / 2 - aa) - sqrt(((p / 2 - aa), 2) - 4 * (kk - bb))) / 2;
-
-		double B = atan(TT4);
-		double N = Re / sqrt(1 - e * e * pow((sin(B)), 2));
-		h = X / cos(B) / cos(L) - N;
-		lat = B;
-		lon = L;
-	}
-	else {
-		h = flag;
-		double a = Re + h;
-		double b = Rp + h;
-		double c = sqrt((a * a - b * b) / (a * a));
-		double B = atan2(XYZG[2], (1 - c * c) * sqrt(pow(XYZG[0], 2)
-			+ pow(XYZG[1], 2)));
-		double L = atan2(XYZG[1], XYZG[0]);
-		lat = B;
-		lon = L;
-	}
-}
-
-void get2BL(double* polar, const POSITION& Pos)
-{
-	double tmp1, tmp2;
-	tmp1 = (Pos.x * Pos.x + Pos.y * Pos.y) * (1 - ECCENT) * (1 - ECCENT);
-	tmp2 = Pos.z / sqrt(tmp1);
-	polar[0] = sqrt(Pos.x * Pos.x + Pos.y * Pos.y + Pos.z * Pos.z);
-	polar[1] = atan2(Pos.y, Pos.x) * 180.0 / Pai;
-	polar[2] = atan(tmp2) * 180.0 / Pai;
-}
-
-//Çó½âÊÓµãÊ¸Á¿ºÍµØÇòµÄ½»µã
-void getXYZO(double satellite[3], double Los[3], double H, double xyzo[3])
-{
-	double a, b, c;
-	a = Re + H;
-	b = Rp + H;
-	c = a / b;
-	double AA, BB, CC, tt;
-	AA = Los[0] * Los[0] + Los[1] * Los[1] + c * c * Los[2] * Los[2];
-	BB = satellite[0] * Los[0] + satellite[1] * Los[1] + c * c * satellite[2] * Los[2];
-	CC = satellite[0] * satellite[0] + satellite[1] * satellite[1]
-		+ c * c * satellite[2] * satellite[2] - Re * Re;
-
-	tt = (-BB - sqrt(BB * BB - AA * CC)) / AA;
-
-	xyzo[0] = satellite[0] + tt * Los[0];
-	xyzo[1] = satellite[1] + tt * Los[1];
-	xyzo[2] = satellite[2] + tt * Los[2];
-
 
 }
 
@@ -404,7 +299,7 @@ double GetJDE(int year, double day)
 }
 
 
-//Î»ÖÃÓÉJ2000µ½WGS84
+//ä½ç½®ç”±J2000åˆ°WGS84
 POSITION TLE2Point::RJ2000toECF(AREAPARA areapara)
 {
 	POSITION SatPosECF, Sartemp;
@@ -428,7 +323,7 @@ POSITION TLE2Point::RJ2000toECF(AREAPARA areapara)
 	return SatPosECF;
 }
 
-//ËÙ¶ÈJ2000×ª»»ÎªµØ¹Ì×ø±êÏµ
+//é€Ÿåº¦J2000è½¬æ¢ä¸ºåœ°å›ºåæ ‡ç³»
 POSITION TLE2Point::VJ2000toECF(AREAPARA areapara)
 {
 	POSITION SatVelECF;
@@ -504,7 +399,7 @@ void getXYZGfroXYZO(double xyzo[3], int epochYear, double epochDay, double xyzg[
 	JED = GetJDE(epochYear, epochDay);
 	T = (JED - 2451545) / 36525;
 
-	//1.0Ëê²î¾ØÕó
+	//1.0å²å·®çŸ©é˜µ
 	double fi, Z, cita;
 	double D_ma[3][3];
 	fi = (2306.2181 * T + 0.30188 * T * T + 0.017998 * T * T * T) * Pai / (180 * 60 * 60);
@@ -521,7 +416,7 @@ void getXYZGfroXYZO(double xyzo[3], int epochYear, double epochDay, double xyzg[
 	D_ma[2][2] = cos(cita);
 
 
-	//2.0 ÕÂ¶¯¾ØÕó
+	//2.0 ç« åŠ¨çŸ©é˜µ
 	double womiga_m, Ms, Mss, F, D, fi_delta
 		, yipuxilong_delta, yipuxilong_average, yipuxilong;
 	double C_ma[3][3];
@@ -558,7 +453,7 @@ void getXYZGfroXYZO(double xyzo[3], int epochYear, double epochDay, double xyzg[
 		+ cos(yipuxilong) * cos(yipuxilong_average);
 
 
-	//3.0 ¸ñÁÖÍşÖÎ½ÇĞı×ª¾Ø
+	//3.0 æ ¼æ—å¨æ²»è§’æ—‹è½¬çŸ©
 	double Hg;
 	double B_ma[3][3];
 	Hg = GMST;
@@ -572,7 +467,7 @@ void getXYZGfroXYZO(double xyzo[3], int epochYear, double epochDay, double xyzg[
 	B_ma[2][1] = 0;
 	B_ma[2][2] = 1;
 
-	//4.0 ¼«ÒÆºöÂÔ
+	//4.0 æç§»å¿½ç•¥
 	double j2000[3];
 	double tmp[3], tmp1[3];
 
@@ -608,7 +503,7 @@ void mygetpoint(int epochYear, double epochDay,  AREAPARA areapara
 	//		printf("Losd:%f,%f,%f\n",Losd[0],Losd[1],Losd[2]);
 
 
-	//1.ËÄÔªÊı×ªÅ·À­½Ç
+	//1.å››å…ƒæ•°è½¬æ¬§æ‹‰è§’
 	double yaw;
 	double roll;
 	double pitch;
@@ -638,7 +533,7 @@ void mygetpoint(int epochYear, double epochDay,  AREAPARA areapara
 	yaw = yaw + a;
 	//    return yaw;
 
-	//2.0 ¸ù¾İ×ËÌ¬½Ç½¨Á¢Ğı×ª¾ØÕó
+	//2.0 æ ¹æ®å§¿æ€è§’å»ºç«‹æ—‹è½¬çŸ©é˜µ
 
 
 
@@ -702,35 +597,17 @@ void mygetpoint(int epochYear, double epochDay,  AREAPARA areapara
 	//		printf("xyzo:%f,%f,%f,%f,%f,%f\n",xyzo[0],xyzo[1],xyzo[2],xyzo[3],xyzo[4],xyzo[5]);
 
 
-	//3.0 ´Ó×ËÌ¬×ø±êÏµµ½¹ßĞÔ×ø±êÏµ  
-	double XX[3], YY[3], ZZ[3];
-	double MXYZ[3][3], MXYZT[3][3];
-	double rr; rr = sqrt(xyzo[0] * xyzo[0] + xyzo[1] * xyzo[1] + xyzo[2] * xyzo[2]);
-	ZZ[0] = -xyzo[0] / rr;
-	ZZ[1] = -xyzo[1] / rr;
-	ZZ[2] = -xyzo[2] / rr;
-	double tmp1, tmp2, tmp3, tmp;
-	tmp1 = xyzo[4] * ZZ[2] - xyzo[5] * ZZ[1];
-	tmp2 = xyzo[5] * ZZ[0] - xyzo[3] * ZZ[2];
-	tmp3 = xyzo[3] * ZZ[1] - xyzo[4] * ZZ[0];
-	tmp = sqrt(tmp1 * tmp1 + tmp2 * tmp2 + tmp3 * tmp3);
-	YY[0] = -tmp1 / tmp;
-	YY[1] = -tmp2 / tmp;
-	YY[2] = -tmp3 / tmp;
-	XX[0] = ZZ[1] * YY[2] - ZZ[2] * YY[1];
-	XX[1] = ZZ[2] * YY[0] - ZZ[0] * YY[2];
-	XX[2] = ZZ[0] * YY[1] - ZZ[1] * YY[0];
+	//3.0 ä»å§¿æ€åæ ‡ç³»åˆ°æƒ¯æ€§åæ ‡ç³»  
 
-	MXYZ[0][0] = -XX[0]; MXYZ[0][1] = YY[0]; MXYZ[0][2] = ZZ[0];
-	MXYZ[1][0] = -XX[1]; MXYZ[1][1] = YY[1]; MXYZ[1][2] = ZZ[1];
-	MXYZ[2][0] = -XX[2]; MXYZ[2][1] = YY[2]; MXYZ[2][2] = ZZ[2];
+	double MXYZ[3][3];
+	
 
 
 	double Loso[3];
 	MatrixAB(MXYZ, Lose, Loso);
 	//		printf("Loso:%f,%f,%f\n",Loso[0],Loso[1],Loso[2]);
 
-	//4.0 ÊÓµãÊ¸Á¿ºÍµØÇòÄ£ĞÍµÄ½»µã
+	//4.0 è§†ç‚¹çŸ¢é‡å’Œåœ°çƒæ¨¡å‹çš„äº¤ç‚¹
 	double sate[3];
 	sate[0] = xyzo[0]; sate[1] = xyzo[1]; sate[2] = xyzo[2];
 	double P_xyzo[3];
@@ -754,7 +631,7 @@ void mygetpoint(int epochYear, double epochDay,  AREAPARA areapara
 //		printf("P_xyzg:%f,%f,%f\n",P_xyzg[0],P_xyzg[1],P_xyzg[2]);
 
 
-//5.0 »ñµÃ¾­Î³¶È
+//5.0 è·å¾—ç»çº¬åº¦
 
 
 	double hh = 0;
@@ -762,7 +639,7 @@ void mygetpoint(int epochYear, double epochDay,  AREAPARA areapara
 	getBL(P_xyzo, 0, earthpoint.lat, earthpoint.lon, hh);
 	earthpoint.lat = earthpoint.lat * 180.0 / Pai;
 	earthpoint.lon = earthpoint.lon * 180.0 / Pai;
-	//cout << "oulalon£º" << earthpoint.lon << '\n' << "oulalat£º" << earthpoint.lat << endl;
+	//cout << "oulalonï¼š" << earthpoint.lon << '\n' << "oulalatï¼š" << earthpoint.lat << endl;
 	//printf("BL:%f,%f\n", LatLonH[0] * 180 / PI, LatLonH[1] * 180 / PI);
 
 
